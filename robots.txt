@@ -1,0 +1,4 @@
+# Borrador en vista previa. QUITAR este archivo al publicar
+# en el dominio definitivo (mamiferanadia.com).
+User-agent: *
+Disallow: /
