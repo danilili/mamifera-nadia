@@ -16,3 +16,7 @@ npm-debug.log*
 
 # Build
 dist/
+
+# Contexto interno del proyecto: se queda en disco para que Claude Code
+# lo lea, pero no se versiona (el repo es publico).
+CLAUDE.md
