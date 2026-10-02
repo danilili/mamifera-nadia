@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cuerpo de Revelaciones · mamifera Nadia</title>
+  <meta name="description" content="Formulario de primera consulta. Tus respuestas se tratan con confidencialidad y respeto.">
+  <link rel="icon" href="assets/img/logos/sello-rojo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=Cedarville+Cursive&amp;family=IM+Fell+English:ital@0;1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+
+<!-- ===================== MENÚ ===================== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logos/logo-rojo.png" alt="mamifera Nadia">
+    </a>
+    <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="blog.html">Blog</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a class="btn" href="formulario.html">Agenda tu consulta</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding-bottom:30px">
+  <img class="esq tl" src="assets/img/ornamentos/esquina.png" alt="">
+  <div class="wrap center">
+    <img class="divisor" src="assets/img/logos/flor-rojo.png" alt="">
+    <p class="kicker">Primera consulta</p>
+    <h1 style="margin:12px 0 10px">Cuerpo de Revelaciones</h1>
+    <p class="lead muted" style="margin:0 auto">¡Hola! Gracias por la confianza que te ha traído hasta aquí.
+    Las siguientes preguntas nos ayudarán a delinear lo que tu propio organismo desea comunicar.
+    Todas tus respuestas estarán a salvo, tratadas con confidencialidad y respeto.</p>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap form-wrap">
+    <form data-form-pasos novalidate>
+
+      <div class="barra" aria-hidden="true"></div>
+      <p class="muted center" style="font-size:.88rem">
+        Paso <span data-paso-actual>1</span> de <span data-total-pasos>6</span></p>
+
+      <!-- ---------- PASO 1 ---------- -->
+      <fieldset class="paso-form activo">
+        <legend class="kicker">Datos de contacto</legend>
+        <h2 style="font-size:2rem;margin:6px 0 4px">¿Cómo te encuentro?</h2>
+        <div class="campo">
+          <label for="email">Correo electrónico *</label>
+          <input id="email" name="email" type="email" required>
+          
+        </div>
+        <div class="campo">
+          <label for="nombre">Nombre completo *</label>
+          <input id="nombre" name="nombre" type="text" required>
+          
+        </div>
+        <div class="campo">
+          <label for="residencia">Lugar de residencia</label>
+          <input id="residencia" name="residencia" type="text">
+          
+        </div>
+        <div class="campo">
+          <label for="edad">Edad</label>
+          <input id="edad" name="edad" type="number" style="max-width:160px">
+          
+        </div>
+        <div class="campo">
+          <label for="telefono">Teléfono de WhatsApp *</label>
+          <input id="telefono" name="telefono" type="tel" required style="max-width:300px">
+          <p class="ayuda">Desde este número te escribiremos para confirmar tu cita.</p>
+        </div>
+        <div class="campo">
+          <label>¿Cómo nos vemos?</label>
+          <div class="modalidad">
+            <label><input type="radio" name="modalidad" value="presencial" required>
+              <span><b>Presencial</b><br><span class="muted" style="font-size:.9rem">Guadalajara · solo viernes</span></span></label>
+            <label><input type="radio" name="modalidad" value="virtual">
+              <span><b>Virtual</b><br><span class="muted" style="font-size:.9rem">Videollamada</span></span></label>
+          </div>
+          <p class="ayuda">Las preguntas son las mismas en ambas modalidades. Esto solo define
+          dónde nos encontramos y el costo.</p>
+        </div>
+      </fieldset>
+
+      <!-- ---------- PASO 2 ---------- -->
+      <fieldset class="paso-form">
+        <legend class="kicker">Tu historia de origen</legend>
+        <h2 style="font-size:2rem;margin:6px 0 4px">De dónde vienes</h2>
+        <div class="campo">
+          <label for="nacimiento">¿Cuándo y dónde naciste? *</label>
+          <input id="nacimiento" name="nacimiento" type="text" required>
+          
+        </div>
+        <div class="campo">
+          <label for="numero_hija">¿Qué número de hija eres?</label>
+          <input id="numero_hija" name="numero_hija" type="text" style="max-width:200px">
+          
+        </div>
+        <div class="campo">
+          <label for="gestacion">¿Qué información tienes sobre tu gestación y nacimiento? ¿Fuiste amamantada?</label>
+          <textarea id="gestacion" name="gestacion"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="sangre">¿Qué tipo de sangre tienes?</label>
+          <input id="sangre" name="sangre" type="text" style="max-width:200px">
+          
+        </div>
+        <div class="campo">
+          <label for="peso_estatura">¿Cuál es tu peso actual y cuál es tu estatura?</label>
+          <input id="peso_estatura" name="peso_estatura" type="text" style="max-width:320px">
+          
+        </div>
+      </fieldset>
+
+      <!-- ---------- PASO 3 ---------- -->
+      <fieldset class="paso-form">
+        <legend class="kicker">Maternidad y cuerpo</legend>
+        <h2 style="font-size:2rem;margin:6px 0 4px">Lo que has gestado</h2>
+        <div class="campo">
+          <label for="maternidad">¿Experimentas la maternidad a través de hijxs humanxs, mascotas, plantas y/o proyectos?</label>
+          <textarea id="maternidad" name="maternidad"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="hijos">En caso de tener hij@s humanos, cuéntame cuántos tienes, cómo nacieron y hace cuánto tiempo</label>
+          <textarea id="hijos" name="hijos"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="perdidas">¿Has tenido pérdidas gestacionales o interrupciones voluntarias?</label>
+          <textarea id="perdidas" name="perdidas"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="cirugias">¿Cirugías?</label>
+          <textarea id="cirugias" name="cirugias"></textarea>
+          
+        </div>
+      </fieldset>
+
+      <!-- ---------- PASO 4 ---------- -->
+      <fieldset class="paso-form">
+        <legend class="kicker">Tu ciclo</legend>
+        <h2 style="font-size:2rem;margin:6px 0 4px">Ritmos y sangrados</h2>
+        <div class="campo">
+          <label for="menarca">¿A qué edad tuviste tu primer periodo menstrual?</label>
+          <input id="menarca" name="menarca" type="text" style="max-width:200px">
+          
+        </div>
+        <div class="campo">
+          <label for="relacion_periodo">¿Qué relación tienes con tu periodo?</label>
+          <textarea id="relacion_periodo" name="relacion_periodo"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="duracion_ciclo">¿Cuánto duran tus ciclos? Es decir, ¿cuántos días pasan de un periodo menstrual a otro?</label>
+          <input id="duracion_ciclo" name="duracion_ciclo" type="text">
+          
+        </div>
+        <div class="campo">
+          <label for="ovulacion">¿Qué relación tienes con tu ovulación?</label>
+          <textarea id="ovulacion" name="ovulacion"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="perimenopausia">En caso de que estés transitando la perimenopausia, cuéntame cuándo inició; y si ya dejaste de menstruar, ¿hace cuánto tuviste el último sangrado?</label>
+          <textarea id="perimenopausia" name="perimenopausia"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="anticonceptivo">Actualmente, ¿llevas un método anticonceptivo? ¿Cuál y por cuánto tiempo lo has llevado?</label>
+          <textarea id="anticonceptivo" name="anticonceptivo"></textarea>
+          
+        </div>
+      </fieldset>
+
+      <!-- ---------- PASO 5 ---------- -->
+      <fieldset class="paso-form">
+        <legend class="kicker">Salud actual</legend>
+        <h2 style="font-size:2rem;margin:6px 0 4px">Dónde estás hoy</h2>
+        <div class="campo">
+          <label for="tratamiento">Actualmente, ¿estás en algún tipo de tratamiento alópata, homeópata o naturópata? ¿En qué consiste?</label>
+          <textarea id="tratamiento" name="tratamiento"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="sueno">¿Cuántas horas duermes diariamente?</label>
+          <input id="sueno" name="sueno" type="text" style="max-width:200px">
+          
+        </div>
+        <div class="campo">
+          <label for="alergias">¿Tienes alergias?</label>
+          <textarea id="alergias" name="alergias"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="desequilibrios">Cuéntame sobre los desequilibrios y síntomas que te han acompañado desde los últimos 7 años hasta el momento presente</label>
+          <textarea id="desequilibrios" name="desequilibrios"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="motivo">¿Qué te trae al espacio de Acompañamiento Ginebotánico y somático que propongo? *</label>
+          <textarea id="motivo" name="motivo" required></textarea>
+          
+        </div>
+      </fieldset>
+
+      <!-- ---------- PASO 6 ---------- -->
+      <fieldset class="paso-form">
+        <legend class="kicker">Alimentación y vida cotidiana</legend>
+        <h2 style="font-size:2rem;margin:6px 0 4px">Tu día a día</h2>
+        <div class="campo">
+          <label for="alimento_favorito">¿Cuál es tu alimento favorito?</label>
+          <input id="alimento_favorito" name="alimento_favorito" type="text">
+          
+        </div>
+
+        <div class="campo">
+          <label>¿Cuál es tu sabor o sabores favoritos?</label>
+          <div class="opciones">
+            <label><input type="checkbox" name="sabores" value="dulce"> Dulce</label>
+            <label><input type="checkbox" name="sabores" value="salado"> Salado</label>
+            <label><input type="checkbox" name="sabores" value="amargo"> Amargo</label>
+            <label><input type="checkbox" name="sabores" value="acido"> Ácido</label>
+            <label><input type="checkbox" name="sabores" value="picante"> Picante</label>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="alimentacion">Describe un día de tu alimentación cotidiana, inicia por el primer alimento o bebida que tomas luego de despertar</label>
+          <textarea id="alimentacion" name="alimentacion"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="movimiento">¿Practicas algún tipo de rutina diaria de movimiento?</label>
+          <textarea id="movimiento" name="movimiento"></textarea>
+          
+        </div>
+        <div class="campo">
+          <label for="dia_ideal">Describe un día ideal para ti</label>
+          <textarea id="dia_ideal" name="dia_ideal"></textarea>
+          
+        </div>
+
+        <div class="campo" style="margin-top:32px;padding:22px;border:1px solid rgba(139,47,46,.25);border-radius:3px">
+          <label style="display:flex;gap:12px;align-items:flex-start;cursor:pointer">
+            <input type="checkbox" name="consentimiento" required style="margin-top:6px">
+            <span>He leído y acepto el <a href="privacidad.html" style="color:var(--rojo);text-decoration:underline">aviso de privacidad</a>
+            y el tratamiento confidencial de mis datos de salud. *</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="nav-form">
+        <button type="button" class="btn btn-ghost" data-anterior>← Anterior</button>
+        <button type="button" class="btn" data-siguiente>Siguiente →</button>
+        <button type="submit" class="btn" data-enviar hidden>Enviar y agendar mi sesión</button>
+      </div>
+      <!-- TODO: conectar el envío. Ver README → "Pendientes". -->
+    </form>
+  </div>
+</section>
+
+<!-- ===================== PIE ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img class="logo" src="assets/img/logos/logo-blanco.png" alt="mamifera Nadia">
+        <p style="color:#9D8C7A">Naturismo &amp; Gyn-ecología Integrativa<br>
+        Aprendiz de Plantas &amp; Astroherbolaria</p>
+      </div>
+      <div>
+        <h4>Consultorio</h4>
+        Calle Vidrio #1987<br>Col. Americana<br>Guadalajara, Jalisco
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="https://wa.me/523316713442">33 1671 3442</a><br>
+        <a href="https://www.instagram.com/mamifera_nadia/">@mamifera_nadia</a><br>
+        <a href="mailto:nadia.avilasalazar@gmail.com">nadia.avilasalazar@gmail.com</a>
+      </div>
+      <div>
+        <h4>Bitácora por correo</h4>
+        <p style="margin-bottom:10px">Plantas, ciclos y saberes del Pueblo Femenino.</p>
+        <form class="sus" style="max-width:none" onsubmit="return false">
+          <label class="sr-only" for="pie-correo">Tu correo</label>
+          <input id="pie-correo" type="email" placeholder="tu correo" required>
+        </form>
+        <label class="consent"><input type="checkbox"> Acepto recibir la bitácora</label>
+      </div>
+    </div>
+    <div class="fin">
+      <span>mamiferanadia.com · © <span data-anio>2026</span> Nadia Ávila Salazar</span>
+      <span><a href="privacidad.html">Aviso de privacidad</a> ·
+            <a href="privacidad.html#cancelacion">Política de cancelación</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/523316713442">Escríbeme por WhatsApp</a>
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

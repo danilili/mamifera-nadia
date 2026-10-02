@@ -1,0 +1,265 @@
+/* =============================================================
+   mamifera Nadia · Consultora Ginebotánica
+   Hoja de estilos única del sitio
+   Paleta y tipografías tomadas del manual de marca.
+   ============================================================= */
+
+/* ---------- 1. Tokens ---------- */
+:root{
+  /* Paleta del manual de marca */
+  --crema:#F0E8D2;        /* Savia mamífera claro · PANTONE 7506C */
+  --crema2:#F8F3E7;       /* variación de apoyo, no está en el manual */
+  --rojo:#8B2F2E;         /* Savia mamífera · PANTONE 663C */
+  --rojo-osc:#6E2423;
+  --morado:#722C69;       /* Misterio · PANTONE 249C */
+  --agua:#94C2C3;         /* Fluir · PANTONE 564C */
+  --tinta:#211915;        /* Muerte / Renacimiento */
+
+  /* Tipografías (manual: sección "Tipografía en web") */
+  --sans:'Averia Serif Libre',Georgia,serif;   /* cuerpo de texto */
+  --titulo:'IM Fell English',Georgia,serif;    /* títulos */
+  --mano:'Cedarville Cursive',cursive;         /* subtítulo o contraste */
+
+  --max:1180px;
+  --radio:3px;
+}
+
+/* ---------- 2. Base ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--crema);color:var(--tinta);
+  line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- 3. Tipografía ---------- */
+h1,h2,h3{font-family:var(--titulo);font-weight:400;line-height:1.12;letter-spacing:.005em}
+h1{font-size:clamp(2.6rem,5.2vw,4.1rem);color:var(--rojo)}
+h2{font-size:clamp(2rem,4.2vw,3.2rem);color:var(--rojo)}
+h3{font-size:clamp(1.3rem,2.2vw,1.65rem);color:var(--tinta)}
+.mano{font-family:var(--mano);font-size:clamp(1.5rem,3vw,2.2rem);color:var(--rojo);line-height:1.35}
+.mano-sm{font-family:var(--mano);font-size:1.35rem;color:var(--rojo)}
+.kicker{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#9A7F6B}
+.lead{font-size:1.12rem;max-width:62ch}
+.muted{color:#6B5A4E}
+.center{text-align:center}
+
+/* ---------- 4. Navegación ---------- */
+.nav{position:sticky;top:0;z-index:40;background:rgba(240,232,210,.94);
+     backdrop-filter:blur(8px);border-bottom:1px solid rgba(139,47,46,.16)}
+.nav .wrap{display:flex;align-items:center;gap:30px;padding-top:14px;padding-bottom:14px}
+.nav .brand img{height:38px;width:auto}
+.nav nav{margin-left:auto;display:flex;gap:26px;align-items:center;font-size:.95rem}
+.nav nav a{padding-bottom:2px;border-bottom:1px solid transparent}
+.nav nav a:not(.btn):hover,
+.nav nav a:not(.btn)[aria-current="page"]{border-color:var(--rojo);color:var(--rojo)}
+.nav nav a.btn:hover{border-color:var(--rojo-osc)}
+
+.menu-btn{display:none;margin-left:auto;width:42px;height:42px;position:relative}
+.menu-btn span{position:absolute;left:9px;right:9px;height:1.5px;background:var(--rojo);transition:.25s}
+.menu-btn span:nth-child(1){top:14px}
+.menu-btn span:nth-child(2){top:20px}
+.menu-btn span:nth-child(3){top:26px}
+.menu-abierto .menu-btn span:nth-child(1){top:20px;transform:rotate(45deg)}
+.menu-abierto .menu-btn span:nth-child(2){opacity:0}
+.menu-abierto .menu-btn span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+/* ---------- 5. Botones ---------- */
+/* [hidden] debe ganarle al display de .btn, o los botones del
+   formulario por pasos se muestran todos a la vez. */
+[hidden]{display:none!important}
+.btn{display:inline-block;background:var(--rojo);color:var(--crema);padding:12px 26px;
+     border-radius:999px;font-size:.95rem;border:1px solid var(--rojo);transition:.18s;text-align:center}
+.btn:hover{background:var(--rojo-osc);border-color:var(--rojo-osc)}
+.btn-ghost{background:transparent;color:var(--rojo)}
+.btn-ghost:hover{background:var(--rojo);color:var(--crema)}
+.btn-claro{background:var(--crema);color:var(--rojo);border-color:var(--crema)}
+.btn-claro:hover{background:#fff;color:var(--rojo-osc);border-color:#fff}
+.btn-linea{background:transparent;border-color:#6A5B4E;color:#D7CBB8}
+.btn-linea:hover{background:rgba(255,255,255,.08);border-color:#8E7C6A}
+
+/* ---------- 6. Secciones ---------- */
+section{padding:92px 0;position:relative}
+.alt{background:var(--crema2)}
+.oscuro{background:var(--tinta);color:var(--crema)}
+.oscuro h2,.oscuro h3,.oscuro .mano{color:var(--crema)}
+.oscuro .kicker{color:#A99583}
+.morado{background:var(--morado);color:#F6EDF4}
+.morado h2,.morado .mano{color:#F6EDF4}
+.morado .kicker{color:#D3AFCB}
+
+.sec-head{text-align:center;margin-bottom:54px}
+.sec-head .lead{margin:14px auto 0}
+.divisor{display:block;width:230px;margin:0 auto 14px;opacity:.85}
+
+/* Flourishes de esquina (universo gráfico del manual) */
+.esq{position:absolute;width:112px;opacity:.4;pointer-events:none}
+.esq.tl{top:22px;left:22px}
+.esq.tr{top:22px;right:22px;transform:scaleX(-1)}
+.esq.bl{bottom:22px;left:22px;transform:scaleY(-1)}
+.esq.br{bottom:22px;right:22px;transform:scale(-1,-1)}
+
+/* ---------- 7. Fotografía enmarcada ---------- */
+.framed{position:relative;width:100%}
+.framed .ph{position:absolute;background-size:cover;background-position:center}
+.framed .fr{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.framed.oval{aspect-ratio:864/1139}
+.framed.oval .ph{inset:12% 15%;border-radius:50%}
+.framed.arco{aspect-ratio:857/1167}
+.framed.arco .ph{inset:15% 18% 17%;border-radius:48% 48% 12% 12%}
+.framed.rect{aspect-ratio:871/1115}
+.framed.rect .ph{inset:16% 18%;border-radius:2px}
+
+/* ---------- 8. Rejillas y tarjetas ---------- */
+.grid{display:grid;gap:26px}
+.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.split{display:grid;gap:54px;align-items:center}
+.split.izq{grid-template-columns:.85fr 1.15fr}
+.split.der{grid-template-columns:1.15fr .85fr}
+
+.card{background:var(--crema2);border:1px solid rgba(139,47,46,.2);
+      border-radius:var(--radio);padding:32px 28px;position:relative}
+.alt .card{background:var(--crema)}
+.card h3{margin-bottom:10px}
+.card .sello{position:absolute;top:-16px;right:18px;width:42px;opacity:.9}
+.card.precio{text-align:center}
+.precio .amt{font-family:var(--titulo);font-size:2.4rem;color:var(--rojo);line-height:1.1;margin:10px 0 2px}
+.precio-grande{font-family:var(--titulo);font-size:1.5rem;color:var(--rojo)}
+
+.pill{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--rojo);border:1px solid rgba(139,47,46,.4);border-radius:999px;
+      padding:4px 14px;margin-bottom:14px}
+
+.lista{list-style:none;margin-top:12px}
+.lista li{position:relative;padding-left:22px;margin-bottom:9px;font-size:.98rem}
+.lista li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;
+                  border-radius:50%;background:var(--rojo);opacity:.65}
+.lista.no li::before{background:#B9A997}
+
+.pasos .paso{text-align:center}
+.paso .n{font-family:var(--titulo);font-size:2.6rem;color:var(--rojo);opacity:.55;line-height:1}
+.paso p{font-size:.97rem;margin-top:6px}
+
+.horario{display:flex;justify-content:space-between;gap:12px;padding:9px 0;
+         border-bottom:1px dotted rgba(139,47,46,.3);font-size:1rem}
+.horario:last-child{border-bottom:none}
+.horario b{font-weight:400;color:var(--rojo)}
+
+/* ---------- 9. Blog ---------- */
+.post{background:var(--crema2);border:1px solid rgba(139,47,46,.2);
+      border-radius:var(--radio);overflow:hidden;display:flex;flex-direction:column}
+.alt .post{background:var(--crema)}
+.post .img{height:190px;background-size:cover;background-position:center}
+.post .cuerpo{padding:26px 24px}
+.post h3{font-size:1.3rem;margin:6px 0 8px}
+.categorias{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.categorias a{border:1px solid rgba(139,47,46,.35);border-radius:999px;padding:6px 18px;font-size:.9rem}
+.categorias a:hover,.categorias a[aria-current]{background:var(--rojo);color:var(--crema);border-color:var(--rojo)}
+
+/* ---------- 10. Instagram ---------- */
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+.ig-grid>*{min-width:0}
+/* Instagram inyecta iframes con ancho mínimo propio: lo neutralizamos */
+.ig-grid .instagram-media{min-width:0!important;max-width:100%!important;margin:0!important;
+                          border-radius:var(--radio)!important}
+.ig-slot{border:1px dashed rgba(139,47,46,.45);border-radius:var(--radio);background:var(--crema2);
+         aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+         gap:10px;text-align:center;padding:26px;color:#9A7F6B;font-size:.9rem}
+.ig-slot img{width:46px;opacity:.5}
+.ig-fallback{border:1px solid rgba(139,47,46,.25);border-radius:var(--radio);background:var(--crema2);
+             aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+             gap:12px;text-align:center;padding:26px}
+
+/* ---------- 11. Formulario ---------- */
+.form-wrap{max-width:760px;margin:0 auto}
+fieldset{border:none;padding:0;margin:0;min-width:0}
+legend{padding:0;display:block}
+.paso-form{display:none}
+.paso-form.activo{display:block}
+.barra{display:flex;gap:5px;margin:26px 0 8px}
+.barra span{flex:1;height:5px;background:rgba(139,47,46,.18);border-radius:999px;transition:.3s}
+.barra span.ok{background:var(--rojo)}
+.campo{margin:22px 0}
+.campo label{display:block;font-size:.98rem;margin-bottom:8px}
+.campo .ayuda{font-size:.85rem;color:#9A7F6B;margin-top:4px}
+.campo input[type=text],.campo input[type=email],.campo input[type=tel],
+.campo input[type=number],.campo select,.campo textarea{
+  width:100%;border:1px solid rgba(139,47,46,.3);background:#fff;border-radius:var(--radio);
+  padding:12px 14px;font-family:var(--sans);font-size:1rem;color:var(--tinta)}
+.campo textarea{min-height:110px;resize:vertical}
+.campo input:focus,.campo textarea:focus,.campo select:focus{outline:2px solid rgba(139,47,46,.35);outline-offset:1px}
+.opciones{display:flex;gap:10px;flex-wrap:wrap}
+.opciones label{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(139,47,46,.3);
+                background:#fff;border-radius:999px;padding:8px 18px;font-size:.93rem;cursor:pointer}
+.modalidad{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+.modalidad label{border:2px solid rgba(139,47,46,.25);background:#fff;border-radius:var(--radio);
+                 padding:20px;text-align:center;cursor:pointer;transition:.18s}
+.modalidad input{position:absolute;opacity:0}
+.modalidad input:checked + span{color:var(--rojo)}
+.modalidad label:has(input:checked){border-color:var(--rojo)}
+.nav-form{display:flex;justify-content:space-between;gap:14px;margin-top:34px}
+
+/* ---------- 12. Suscripción ---------- */
+.sus{display:flex;gap:12px;max-width:520px;margin-top:22px}
+.sus input{flex:1;min-width:0;border:1px solid rgba(246,237,244,.45);background:rgba(255,255,255,.1);
+           color:#F6EDF4;padding:13px 18px;border-radius:999px;font-family:var(--sans);font-size:.95rem}
+.sus input::placeholder{color:rgba(246,237,244,.6)}
+.consent{font-size:.82rem;opacity:.8;margin-top:12px;display:block}
+
+/* ---------- 13. Pie ---------- */
+footer{background:var(--tinta);color:#D7CBB8;padding:74px 0 34px;font-size:.93rem}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+footer .cols>*{min-width:0}
+footer h4{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:#8E7C6A;
+          margin-bottom:14px;font-weight:400;font-family:var(--sans)}
+footer a:hover{color:var(--crema)}
+footer .logo{width:170px;margin-bottom:18px;opacity:.95}
+footer .fin{margin-top:52px;padding-top:22px;border-top:1px solid rgba(215,203,184,.18);
+            display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.82rem;color:#8E7C6A}
+
+/* ---------- 14. WhatsApp flotante ---------- */
+.wa{position:fixed;right:22px;bottom:22px;z-index:50;background:var(--rojo);color:var(--crema);
+    border-radius:999px;padding:13px 24px;font-size:.92rem;box-shadow:0 8px 26px rgba(33,25,21,.3)}
+.wa:hover{background:var(--rojo-osc)}
+
+/* ---------- 15. Responsive ---------- */
+@media(max-width:900px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .wrap{padding:0 16px}
+  .g2,.g3,.g4,.ig-grid{grid-template-columns:1fr}
+  .g4.pasos,.ig-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split.izq,.split.der{grid-template-columns:1fr;gap:38px}
+  .split .framed{max-width:420px;margin:0 auto}
+  .modalidad{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+  .esq{display:none}
+
+  .menu-btn{display:block}
+  .nav nav{position:fixed;inset:68px 0 auto;background:var(--crema);flex-direction:column;
+           align-items:stretch;gap:0;padding:10px 16px 22px;margin:0;
+           border-bottom:1px solid rgba(139,47,46,.16);display:none}
+  .menu-abierto .nav nav{display:flex}
+  .nav nav a{padding:14px 4px;border-bottom:1px solid rgba(139,47,46,.12)}
+  .nav nav a.btn{margin-top:14px;border-bottom:1px solid var(--rojo)}
+}
+@media(max-width:560px){
+  .ig-grid{grid-template-columns:1fr}
+  .sus{flex-direction:column}
+  .sus .btn{width:100%}
+}
+
+/* ---------- 16. Accesibilidad ---------- */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+:focus-visible{outline:2px solid var(--rojo);outline-offset:2px}
