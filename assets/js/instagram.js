@@ -30,9 +30,9 @@
    ============================================================= */
 
 const PUBLICACIONES = [
-  // 'https://www.instagram.com/p/XXXXXXXXXXX/',
-  // 'https://www.instagram.com/p/XXXXXXXXXXX/',
-  // 'https://www.instagram.com/reel/XXXXXXXXXXX/',
+  'https://www.instagram.com/reel/C6KQhVRu2CW/',
+  'https://www.instagram.com/p/DdANL_gqXo8/',
+  'https://www.instagram.com/p/DbwXtLHqSeo/',
 ];
 
 const PERFIL = 'https://www.instagram.com/mamifera_nadia/';
@@ -69,7 +69,8 @@ function blockquote(url) {
   bq.className = 'instagram-media';
   bq.setAttribute('data-instgrm-permalink', url);
   bq.setAttribute('data-instgrm-version', '14');
-  bq.setAttribute('data-instgrm-captioned', '');
+  // Sin data-instgrm-captioned: con el texto completo cada embed pasaba
+  // de 1,400 px de alto. El texto sigue a un clic, en Instagram.
   // Contenido de respaldo: si embed.js no carga, al menos queda el enlace
   const a = document.createElement('a');
   a.href = url;

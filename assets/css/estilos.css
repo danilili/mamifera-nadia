@@ -13,6 +13,7 @@
   --rojo-osc:#6E2423;
   --morado:#722C69;       /* Misterio · PANTONE 249C */
   --agua:#94C2C3;         /* Fluir · PANTONE 564C */
+  --agua-claro:#CFE4E4;   /* Fluir al 45 % sobre blanco; variación de apoyo, no está en el manual */
   --tinta:#211915;        /* Muerte / Renacimiento */
 
   /* Tipografías (manual: sección "Tipografía en web") */
@@ -50,7 +51,7 @@ h3{font-size:clamp(1.3rem,2.2vw,1.65rem);color:var(--tinta)}
 .center{text-align:center}
 
 /* ---------- 4. Navegación ---------- */
-.nav{position:sticky;top:0;z-index:40;background:rgba(240,232,210,.94);
+.nav{position:sticky;top:0;z-index:40;background:rgba(207,228,228,.94);
      backdrop-filter:blur(8px);border-bottom:1px solid rgba(139,47,46,.16)}
 .nav .wrap{display:flex;align-items:center;gap:30px;padding-top:14px;padding-bottom:14px}
 .nav .brand img{height:38px;width:auto}
@@ -85,7 +86,15 @@ h3{font-size:clamp(1.3rem,2.2vw,1.65rem);color:var(--tinta)}
 
 /* ---------- 6. Secciones ---------- */
 section{padding:92px 0;position:relative}
-.alt{background:var(--crema2)}
+/* Nadia pidió más presencia del aqua y menos crema (oct 2026): los encabezados
+   de página van en aqua pleno y las secciones alternas en aqua claro. */
+.alt{background:var(--agua-claro)}
+.agua{background:var(--agua)}
+/* Sobre aqua pleno el café apagado y el rojo delgado no alcanzan contraste */
+.agua .muted{color:var(--tinta);opacity:.85}
+.agua .kicker{color:var(--tinta);opacity:.7}
+.agua .btn-ghost{color:var(--rojo-osc);border-color:var(--rojo-osc)}
+.agua .btn-ghost:hover{background:var(--rojo-osc);color:var(--crema)}
 .oscuro{background:var(--tinta);color:var(--crema)}
 .oscuro h2,.oscuro h3,.oscuro .mano{color:var(--crema)}
 .oscuro .kicker{color:#A99583}
@@ -115,6 +124,14 @@ section{padding:92px 0;position:relative}
 .framed.rect{aspect-ratio:871/1115}
 .framed.rect .ph{inset:16% 18%;border-radius:2px}
 
+/* Pies de foto: textos de contexto de Nadia, siempre por debajo del texto principal */
+.pie{max-width:360px;margin:4px auto 0;text-align:center;font-size:.88rem;
+     font-style:italic;line-height:1.55;color:#6B5A4E}
+.card figure{margin:-32px -28px 22px}
+.card .foto{aspect-ratio:4/3;background-size:cover;background-position:center;
+            border-radius:var(--radio) var(--radio) 0 0}
+.pie-foto{padding:10px 28px 0;font-size:.82rem;font-style:italic;line-height:1.5;color:#6B5A4E}
+
 /* ---------- 8. Rejillas y tarjetas ---------- */
 .grid{display:grid;gap:26px}
 .grid>*{min-width:0}
@@ -124,10 +141,10 @@ section{padding:92px 0;position:relative}
 .split{display:grid;gap:54px;align-items:center}
 .split.izq{grid-template-columns:.85fr 1.15fr}
 .split.der{grid-template-columns:1.15fr .85fr}
+.hero .split{grid-template-columns:1.08fr .92fr}
 
 .card{background:var(--crema2);border:1px solid rgba(139,47,46,.2);
       border-radius:var(--radio);padding:32px 28px;position:relative}
-.alt .card{background:var(--crema)}
 .card h3{margin-bottom:10px}
 .card .sello{position:absolute;top:-16px;right:18px;width:42px;opacity:.9}
 .card.precio{text-align:center}
@@ -156,7 +173,6 @@ section{padding:92px 0;position:relative}
 /* ---------- 9. Blog ---------- */
 .post{background:var(--crema2);border:1px solid rgba(139,47,46,.2);
       border-radius:var(--radio);overflow:hidden;display:flex;flex-direction:column}
-.alt .post{background:var(--crema)}
 .post .img{height:190px;background-size:cover;background-position:center}
 .post .cuerpo{padding:26px 24px}
 .post h3{font-size:1.3rem;margin:6px 0 8px}
@@ -226,9 +242,12 @@ footer .fin{margin-top:52px;padding-top:22px;border-top:1px solid rgba(215,203,1
             display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.82rem;color:#8E7C6A}
 
 /* ---------- 14. WhatsApp flotante ---------- */
-.wa{position:fixed;right:22px;bottom:22px;z-index:50;background:var(--rojo);color:var(--crema);
-    border-radius:999px;padding:13px 24px;font-size:.92rem;box-shadow:0 8px 26px rgba(33,25,21,.3)}
-.wa:hover{background:var(--rojo-osc)}
+/* Solo el ícono, en rojo savia: el verde de WhatsApp rompía la paleta */
+.wa{position:fixed;right:20px;bottom:20px;z-index:50;width:52px;height:52px;border-radius:50%;
+    background:var(--rojo);color:var(--crema);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(33,25,21,.28);transition:.18s}
+.wa svg{width:26px;height:26px;fill:currentColor}
+.wa:hover{background:var(--rojo-osc);transform:translateY(-2px)}
 
 /* ---------- 15. Responsive ---------- */
 @media(max-width:900px){
@@ -239,12 +258,25 @@ footer .fin{margin-top:52px;padding-top:22px;border-top:1px solid rgba(215,203,1
   .g4.pasos,.ig-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .split.izq,.split.der{grid-template-columns:1fr;gap:38px}
   .split .framed{max-width:420px;margin:0 auto}
+  /* Portada: el retrato va primero y grande; es lo que presenta a Nadia */
+  .hero{padding-top:28px}
+  .hero .split{grid-template-columns:1fr;gap:18px}
+  .hero .framed{order:-1;max-width:300px}
+  .hero h1 br{display:none}
+
+  /* Tarjetas de la propuesta: carrusel horizontal en vez de lista larga.
+     La siguiente tarjeta asoma para que se entienda que se desliza. */
+  .grid.deslizable{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;
+                   gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+                   margin:0 -16px;padding:0 16px 14px;scroll-padding:0 16px;scrollbar-width:none}
+  .grid.deslizable::-webkit-scrollbar{display:none}
+  .grid.deslizable>*{scroll-snap-align:start}
   .modalidad{grid-template-columns:1fr}
   footer .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
   .esq{display:none}
 
   .menu-btn{display:block}
-  .nav nav{position:fixed;inset:68px 0 auto;background:var(--crema);flex-direction:column;
+  .nav nav{position:fixed;inset:68px 0 auto;background:var(--agua-claro);flex-direction:column;
            align-items:stretch;gap:0;padding:10px 16px 22px;margin:0;
            border-bottom:1px solid rgba(139,47,46,.16);display:none}
   .menu-abierto .nav nav{display:flex}
