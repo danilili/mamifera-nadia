@@ -170,8 +170,10 @@ con fecha y hora. Notas importantes:
 
 ## Pendientes
 
-- [ ] **Fotografía real.** Las imágenes actuales son los prototipos del manual (tónico, bolsa,
-      tarjetas). Faltan al menos un retrato de Nadia y fotos del consultorio.
+- [x] **Retrato y fotos de la práctica.** Portada y servicios ya usan fotos de Nadia.
+- [ ] **Fotos del consultorio.** Las tarjetas del blog y la primera consulta de servicios
+      siguen con prototipos del manual (tónico, bolsa, tarjetas).
+- [x] **Publicaciones de Instagram.** Tres reels en `assets/js/instagram.js`.
 - [ ] **Nombre de marca.** El manual dice *mamifera Nadia · Consultora Ginebotánica*; su
       configuración de Emi dice *Consultorio Ginebotánica*; el PDF viejo decía *Acompañamiento
       & Consultoría Ginebotánica*. Hay que unificarlo.
@@ -200,6 +202,7 @@ hay que actualizarlos aquí también.
 | Horario presencial | Viernes 11–20 |
 | Agenda | Mínimo 24 h de anticipación, máximo 30 días |
 | Cancelación | 24 h antes · 50% queda como saldo a favor |
+| Acompañamiento | 24/7 por WhatsApp durante el protocolo (30 días), directo con Nadia. Emi solo agenda citas |
 | Consultorio | Calle Vidrio #1987, Col. Americana, Guadalajara |
 
 Los **datos bancarios no están en el sitio** y no deben agregarse: Emi los comparte por
